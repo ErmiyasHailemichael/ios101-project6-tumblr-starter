@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-    
+    // https://api.tumblr.com/v2/blog/humansofnewyork/posts/photo?api_key=1zT8CiXGXFcQDyMFG7RtcfGLwTdDjFUJnZzKJaWTmgyK4lKGYk
     func fetchPosts() {
         let url = URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork/posts/photo?api_key=1zT8CiXGXFcQDyMFG7RtcfGLwTdDjFUJnZzKJaWTmgyK4lKGYk")!
         let session = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -84,21 +84,22 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.row]
         performSegue(withIdentifier: "showDetail", sender: post)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Check if the segue identifier matches the one for showing detail view
+        
         if segue.identifier == "showDetail" {
-            // Ensure there is a selected index path
+           
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
             
-            // Get the selected post from the posts array using the selected index path's row
+            
             let selectedPost = posts[selectedIndexPath.row]
             
-            // Get access to the detail view controller via the segue's destination (guard to unwrap the optional)
+            
             guard let detailViewController = segue.destination as? DetailViewController else { return }
             
-            // Set the post property of the detail view controller
+           
             detailViewController.post = selectedPost
         }
     }

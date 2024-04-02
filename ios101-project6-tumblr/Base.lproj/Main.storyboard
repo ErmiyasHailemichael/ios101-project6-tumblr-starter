@@ -45,7 +45,7 @@
                                         <connections>
                                             <outlet property="postImageView" destination="5cg-6O-OPR" id="qUw-eB-ieB"/>
                                             <outlet property="summaryLabel" destination="Ans-1x-Iz9" id="e0V-uT-5A7"/>
-                                            <segue destination="fOw-bf-fwj" kind="show" id="zBD-t0-tr3"/>
+                                            <segue destination="fOw-bf-fwj" kind="show" identifier="showDetail" id="zBD-t0-tr3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061.8320610687022" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1098" y="4"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="psQ-oe-u6b">
